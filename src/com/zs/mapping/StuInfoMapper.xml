@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zs.mapping.StuInfoMapper">
+    <select id="all" resultType="com.zs.Entity.StuInfoEntity">
+        select * from stuinfo
+    </select>
+
+    <select id="one" parameterType="Integer" resultType="com.zs.Entity.StuInfoEntity">
+        select * from stuinfo where stuid=#{stuid}
+    </select>
+
+    <select id="one2" parameterType="Integer" resultType="String">
+        select stuname from stuinfo where stuid=#{stuid}
+    </select>
+
+    <insert id="add" parameterType="com.zs.Entity.StuInfoEntity">
+        insert into stuinfo values(null,#{stuname},#{stusex},#{stuage})
+    </insert>
+
+    <update id="upt" parameterType="com.zs.Entity.StuInfoEntity">
+        update stuinfo set stuName=#{stuname},stusex=#{stusex},stuage=#{stuage} where stuid=#{stuid}
+    </update>
+
+    <delete id="del" parameterType="Integer">
+        delete from stuinfo where stuid=#{stuid}
+    </delete>
+</mapper>
