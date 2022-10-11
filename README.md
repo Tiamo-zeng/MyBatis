@@ -1,1 +1,1 @@
-Mybatis应用
+Mybatis
